@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App" style={{ height: window.innerHeight }}>
+        <div>
           <div>
             <Navbar bg="primary" variant="dark">
               <Navbar.Brand href="#home">Navbar</Navbar.Brand>
