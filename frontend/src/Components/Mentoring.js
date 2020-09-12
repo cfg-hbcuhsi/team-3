@@ -4,8 +4,6 @@ import {
   CardGroup, Card, CardDeck
 } from 'react-bootstrap';
 
-import MultiSelect from 'react-multi-select-component';
-
 class Mentoring extends Component {
 
   constructor(props) {
@@ -43,7 +41,7 @@ class Mentoring extends Component {
       <Container className="mt-5">
         <Container>
 
-          <MultiSelect></MultiSelect>
+        
           <Form>
             <Form.Row className="align-items-center">
               <Col>
