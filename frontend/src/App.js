@@ -15,27 +15,12 @@ class App extends Component {
           <Navbar bg="primary" variant="dark">
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/mentoring">Mentoring</Nav.Link>
+              <Nav.Link href="/biographies">Biographies</Nav.Link>
+              <Nav.Link href="/resources">Resources</Nav.Link>
             </Nav>
           </Navbar>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/mentoring">Mentoring</Link>
-              </li>
-              <li>
-                <Link to="/biographies">Biographies</Link>
-              </li>
-              <li>
-                <Link to="/resources">Resources</Link>
-              </li>
-            </ul>
-          </nav>
           <Switch>
             <Route path="/mentoring">
               <Biographies />
