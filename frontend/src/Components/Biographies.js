@@ -56,7 +56,10 @@ class Biographies extends Component {
           </Form>
         </Container>
         <Container className="mt-4" style={{ maxWidth: '700px', margin: '0 auto'}}>
-          {this.state.videos.map((video) => {
+					{this.state.videos.length === 0 && (
+						<div><span style={{color: "red"}}>There are not any videos related to this field</span></div>
+					)}
+					{this.state.videos.map((video) => {
             return <Video className="Results" data={video} />;
           })}
         </Container>
