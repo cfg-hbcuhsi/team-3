@@ -44,11 +44,11 @@ class Video extends Component {
     return (
       <div>
         <div></div>
-        <Card style={{ width: "35rem" }}>
+        <Card style={{ width: '100%' }}>
           <iframe
             title={id}
-            height="315"
             src={url}
+            height="100%"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen

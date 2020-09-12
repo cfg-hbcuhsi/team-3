@@ -93,10 +93,6 @@ class Resources extends Component {
     return res;
   }
 
-  
-
-
-
   render() {
     return ( 
       <div class="page">

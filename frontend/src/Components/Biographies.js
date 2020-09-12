@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, FormControl } from "react-bootstrap";
+import { Form, Button, FormControl, Container } from "react-bootstrap";
 import Video from "./videoCard";
 import "../App.css";
 import axios from "axios";
@@ -36,7 +36,7 @@ class Biographies extends Component {
   render() {
     return (
       <div>
-        <div className="search">
+        <Container style={{ maxWidth: '700px', margin: '0 auto'}} className="">
           <Form inline>
             <FormControl
               size="lg"
@@ -54,12 +54,12 @@ class Biographies extends Component {
               Search
             </Button>
           </Form>
-        </div>
-        <div className="Results">
+        </Container>
+        <Container className="mt-4" style={{ maxWidth: '700px', margin: '0 auto'}}>
           {this.state.videos.map((video) => {
             return <Video className="Results" data={video} />;
           })}
-        </div>
+        </Container>
         <br />
       </div>
     );
