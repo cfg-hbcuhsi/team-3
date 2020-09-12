@@ -1,0 +1,39 @@
+
+.page{
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    background-color: bisque;
+}
+
+.btn {
+    margin-right: 15px;
+}
+
+
+.buttons{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;  
+}
+
+.button{
+    border-radius: 16px;
+    margin-left: 50px;
+    background-color: chocolate;
+}
+
+li {
+    color:#9999;
+}
+
+h1 {
+    color: #ABC4A1;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+}
