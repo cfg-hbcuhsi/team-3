@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Resource from "./Resource";
+
 class Resources extends Component {
   constructor() {
     super();
@@ -19,17 +20,17 @@ class Resources extends Component {
   }
   render() {
     return (
-      <div>
-      <div>
+      <div class="page">
+      <div class="buttons">
         <button className="volunteering">Volunteering</button>
         <button className="scholarships">Scholarships</button>
         <button className="summer-programs">Summer Programs</button>
-        <button className="major-info">Major Info</button>
+        <button className="fly-in">Fly In</button>
         <button className="test-prep">Test Prep</button>
       </div>
-      <div>
+      <div class="Search">
         <input type="text" placeholder="Search..">
-          </input>
+        </input>
       </div>
       <div>
         <p>

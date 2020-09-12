@@ -40,8 +40,6 @@ class Mentoring extends Component {
     return (
       <Container className="mt-5">
         <Container>
-
-        
           <Form>
             <Form.Row className="align-items-center">
               <Col>
