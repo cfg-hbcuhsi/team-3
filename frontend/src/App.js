@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Biographies from "./Components/Biographies";
+import Mentoring from "./Components/Mentoring";
+import Resources from "./Components/Resources";
+import Home from "./Components/Home";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/mentoring">Mentoring</Link>
+              </li>
+              <li>
+                <Link to="/biographies">Biographies</Link>
+              </li>
+              <li>
+                <Link to="/resources">Resources</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/mentoring">
+              <Biographies />
+            </Route>
+            <Route path="/biographies">
+              <Mentoring />
+            </Route>
+            <Route path="/resources">
+              <Resources />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
