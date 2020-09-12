@@ -2,3 +2,5 @@
 *.ppk
 backend/package-lock.json
 frontend/node_modules
+aws-config.json
+.DS_Store
