@@ -5,32 +5,43 @@ class Resources extends Component {
   constructor() {
     super();
     this.state = {
-      resources: []
+      resources: [],
+      all: []
     }
   }
 
   componentDidMount() {
     fetch('/api/resources').then(res => res.json()).then(res => {
       this.setState({resources: res});
+      this.setState({all: res});
     }).catch(err => {
       console.log(err);
     })
   }
+
+  filterResource(e){
+    const copy = [...this.state.all]
+    if (e === 'all') {
+      this.setState({resources: copy})
+    }
+    else {
+      const filtered = copy.filter(resource => resource.tag == e);
+      this.setState({resources: filtered});
+    }
+  }
+
 
 
   render() {
     return (
       <div>
       <div>
-        <button className="volunteering">Volunteering</button>
-        <button className="scholarships">Scholarships</button>
-        <button className="summer-programs">Summer Programs</button>
-        <button className="major-info">Major Info</button>
-        <button className="test-prep">Test Prep</button>
-      </div>
-      <div>
-        <input type="text" placeholder="Search..">
-          </input>
+        <button className="volunteering" onClick={() => this.filterResource('volunteering')}>Volunteering</button>
+        <button className="scholarships" onClick={() => this.filterResource('scholarships')}>Scholarships</button>
+        <button className="summer-programs" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</button>
+        <button className="major-info" onClick={() => this.filterResource('flyIns')}>Fly-ins</button>
+        <button className="test-prep" onClick={() => this.filterResource('testPrep')}>Test Prep</button>
+        <button className="all" onClick={() => this.filterResource('all')}>All</button>
       </div>
       <div>
         <p>
