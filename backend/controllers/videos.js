@@ -3,17 +3,17 @@ const router = express.Router();
 const videoData = require('../data/videos');
 
 function filterVideos(data, filter){
-    if (filter === "") return data;
-    if (filter === "doctor") return [data[1]]
-    else return [data[0]]
-    const regexFilter = new RegExp(filter, 'i');
-    const filteredData = data.filter(video => {
-	const {title, profession, mentor_name, description} = video;
-	return (title.search(regexFilter) >= 0) ||(profession.search(regexFilter)) || (mentor_name.search(regexFilter) >= 0) || (description.search(regexFilter) >=0) 
-    })
-    console.log('Filtered Data: ',filteredData)
-    console.log('Filter: ',filter)
-return filteredData;                             
+	const filteredData = data.filter(video => {
+		const {title, profession, mentor_name, description} = video;
+		const arr_str = `${title} ${profession} ${mentor_name} ${description}`.toLowerCase().split(" ")
+		const arr_filter = filter.toLowerCase().split(" ")
+		for (let index = 0; index < arr_filter.length; ++index) {
+			let str = arr_filter[index]
+			if (arr_str.includes(str))
+				return true
+		}
+})
+return filteredData;
 }
 //route: PORT/api/testing/test
 router.get('/', async (req, res) => {
