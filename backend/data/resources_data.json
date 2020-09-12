@@ -1,0 +1,86 @@
+[
+    {
+        "resource_id": 1,
+        "title": "Bates",
+        "tag": "flyIns",
+        "summary": "Bates is where you can find out about fly-ins!",
+        "url": "https://www.bates.edu/admission/prologue/"
+    },
+    {
+        "resource_id": 2,
+        "title": "Amherst",
+        "tag": "flyIns",
+        "summary": "Amherst is where you can find out about fly-ins!",
+        "url": "https://www.amherst.edu/admission/diversity/EONS"
+    },
+    {
+        "resource_id": 2,
+        "title": "Amherst",
+        "tag": "flyIns",
+        "summary": "Amherst is where you can find out about fly-ins!",
+        "url": "https://www.amherst.edu/admission/diversity/EONS"
+    },
+    {
+        "resource_id": 2,
+        "title": "Amherst",
+        "tag": "flyIns",
+        "summary": "Amherst is where you can find out about fly-ins!",
+        "url": "https://www.amherst.edu/admission/diversity/EONS"
+    },
+    {
+        "resource_id": 3,
+        "title": "Chabotspace",
+        "tag": "volunteering",
+        "summary": "Chanotspace is where you can find out about volunteering!",
+        "url": "https://chabotspace.org/join-and-give/volunteer/"
+    },
+    {
+        "resource_id": 4,
+        "title": "Oaklandzoo",
+        "tag": "volunteering",
+        "summary": "Oaklandzoo is where you can find out about volunteering!",
+        "url": "https://www.oaklandzoo.org/volunteer-and-internship-opportunities"
+    },
+    {
+        "resource_id": 5,
+        "title": "chicanalatina",
+        "tag": "scholarships",
+        "summary": "Chican latina is where you can find out about scholarships!",
+        "url": "https://chicanalatina.org/programs/scholarships/"
+    },
+    {
+        "resource_id": 6,
+        "title": "oaklandpromise",
+        "tag": "scholarships",
+        "summary": "Oaklandpromise is where you can find out about scholarships!",
+        "url": "https://scholarships.oaklandpromise.org"
+    },
+    {
+        "resource_id": 7,
+        "title": "Si Games",
+        "tag": "summerPrograms",
+        "summary": "Si Games is where you can find out about summer programs!",
+        "url": "http://si.games.ucla.edu/?utm_source=teenlife"
+    },
+    {
+        "resource_id": 8,
+        "title": "Barnard",
+        "tag": "summerPrograms",
+        "summary": "Barnard is where you can find out about summer programs!",
+        "url": "https://barnard.edu/summer-pre-college-programs"
+    },
+    {
+        "resource_id": 9,
+        "title": "Teen Life",
+        "tag": "testPrep",
+        "summary": "Teen Life is where you can find out about teen life!",
+        "url": "https://www.teenlife.com/summer-program/uc-san-diego-sally-ride-science-program/"
+    }, 
+    {
+        "resource_id": 10,
+        "title": "Power Score",
+        "tag": "testPrep",
+        "summary": "Power Score is where you can find out about teen life!",
+        "url": "https://www.powerscore.com/sat/help/"
+    }
+]
