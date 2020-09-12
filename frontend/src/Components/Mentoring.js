@@ -40,7 +40,7 @@ class Mentoring extends Component {
 
     const handleQuestion = () => {
 
-      Axios.post("localhost:4000/api/mentor", { "id": mentor_id, "question": "1232131" })
+      Axios.post("http://localhost:4000/api/mentor", { "id": mentor_id, "question": "1232131" })
             .then(res => handleClose())
             .catch(err => document.getElementById('alert-status').innerText = "Failed to Upload");
 

@@ -69,14 +69,14 @@ router.get('/', (req, res) => {
 router.post('/question', (req, res) => {
 	// didn't send query params
 	if(req.body.mentor_id == null || req.body.question == null) {
-		res.send({'hasError': true});
+		res.json({'hasError': true});
 		return;
 	}
 	
 	console.log(req.body);
 	
 	
-	res.send({'hasError': false});
+	res.json({'hasError': false});
 });
 
 
