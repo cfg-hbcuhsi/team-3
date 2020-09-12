@@ -15,7 +15,13 @@ class App extends Component {
         <div>
           <div>
             <Navbar bg="primary" variant="dark">
-              <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+              <img
+                alt=""
+                src={require("./Components/ourLogo.png")}
+                width="50"
+                height="50"
+                className="d-inline-block align-top"
+              />
               <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/mentoring">Mentoring</Nav.Link>
