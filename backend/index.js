@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+const AWS = require('aws-sdk');
+AWS.config.loadFromPath('./aws-config.json');
 const app = express();
 const PORT = 4000;
 
