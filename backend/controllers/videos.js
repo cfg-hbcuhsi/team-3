@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const videoData = require('../data/videos');
+
 //route: PORT/api/testing/test
 router.get('/', async (req, res) => {
 	console.log(req.query)
@@ -8,6 +9,7 @@ router.get('/', async (req, res) => {
 		console.log("Offset ", offset);
 		console.log("page_size ", page_size);
 		console.log("filter ", filter);
+
 		res.json(videoData);
 })
 
@@ -26,5 +28,25 @@ router.post('/:id/question', async (req, res) => {
 			status: "ok",
 			message: "asked question",
 		});
+})
+
+//request translation
+router.get('/translate', async(req, res) => {
+	try {
+		const response = await request({
+	    url: 'http://127.0.0.1:4000/api/translate', //on 3000 put your port no.
+	    method: 'GET',
+	    json: {
+		    "sourceLanguage": "es",
+		    "targetLanguage": "en",
+		    "text" : "Amigo comos es ta"
+			}
+		});
+		console.log(response);
+
+	} catch(error) {
+		console.log(error);
+
+	};
 })
 module.exports = router;

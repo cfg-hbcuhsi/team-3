@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { Form, Button, FormControl } from "react-bootstrap";
 import Video from "./videoCard";
 import "../App.css";
+import axios from "axios";
+
 class Biographies extends Component {
   async componentDidMount() {
-    const response = await fetch("http://localhost:4000/api/videos", {
-      mode: "no-cors",
-    });
-  fetchVideos() {
-    
+    const url = "http://localhost:4000/api/videos";
+    const res = await axios(url);
+    console.log(res.data);
+    console.log("Hello");
   }
   render() {
     return (
