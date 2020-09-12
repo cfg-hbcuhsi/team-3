@@ -6,22 +6,24 @@ import Biographies from "./Components/Biographies";
 import Mentoring from "./Components/Mentoring";
 import Resources from "./Components/Resources";
 import Home from "./Components/Home";
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Navbar bg="primary" variant="dark">
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/mentoring">Mentoring</Nav.Link>
-              <Nav.Link href="/biographies">Biographies</Nav.Link>
-              <Nav.Link href="/resources">Resources</Nav.Link>
-            </Nav>
-          </Navbar>
+          <div>
+            <Navbar bg="primary" variant="dark">
+              <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/mentoring">Mentoring</Nav.Link>
+                <Nav.Link href="/biographies">Biographies</Nav.Link>
+                <Nav.Link href="/resources">Resources</Nav.Link>
+              </Nav>
+            </Navbar>
+          </div>
           <Switch>
             <Route path="/mentoring">
               <Mentoring />

@@ -14,73 +14,129 @@
         "url": "https://www.amherst.edu/admission/diversity/EONS"
     },
     {
-        "resource_id": 2,
-        "title": "Amherst",
-        "tag": "flyIns",
-        "summary": "Amherst is where you can find out about fly-ins!",
-        "url": "https://www.amherst.edu/admission/diversity/EONS"
-    },
-    {
-        "resource_id": 2,
-        "title": "Amherst",
-        "tag": "flyIns",
-        "summary": "Amherst is where you can find out about fly-ins!",
-        "url": "https://www.amherst.edu/admission/diversity/EONS"
-    },
-    {
         "resource_id": 3,
-        "title": "Chabotspace",
-        "tag": "volunteering",
-        "summary": "Chanotspace is where you can find out about volunteering!",
-        "url": "https://chabotspace.org/join-and-give/volunteer/"
+        "title": "Bucknell",
+        "tag": "flyIns",
+        "summary": "Bucknell is where you can find out about fly-ins!",
+        "url": "https://www.amherst.edu/admission/diversity/EONS"
     },
     {
         "resource_id": 4,
-        "title": "Oaklandzoo",
-        "tag": "volunteering",
-        "summary": "Oaklandzoo is where you can find out about volunteering!",
-        "url": "https://www.oaklandzoo.org/volunteer-and-internship-opportunities"
+        "title": "Carnegie Mellon",
+        "tag": "flyIns",
+        "summary": "Amherst is where you can find out about fly-ins!",
+        "url": "https://admission.enrollment.cmu.edu/pages/celebration-of-diversity-weekend"
     },
     {
         "resource_id": 5,
-        "title": "chicanalatina",
+        "title": "Chabot Space Center",
+        "tag": "volunteering",
+        "summary": "Chabot Space Center is where you can find out about volunteering!",
+        "url": "https://chabotspace.org/join-and-give/volunteer/"
+    },
+    {
+        "resource_id": 6,
+        "title": "Oakland Zoo",
+        "tag": "volunteering",
+        "summary": "Oakland Zoo is where you can find out about volunteering!",
+        "url": "https://www.oaklandzoo.org/volunteer-and-internship-opportunities"
+    },
+    {
+        "resource_id": 7,
+        "title": "Hands On Bay Area",
+        "tag": "volunteering",
+        "summary": "Hands On Bay Area is where you can find out about volunteering!",
+        "url": "https://www.handsonbayarea.org/youthcouncil"
+    },
+    {
+        "resource_id": 8,
+        "title": "Childrens Hospital Oakland",
+        "tag": "volunteering",
+        "summary": "Hands On Bay Area is where you can find out about volunteering!",
+        "url": "https://www.childrenshospitaloakland.org/main/high-school-summer-volunteer-program.aspx"
+    },
+    {
+        "resource_id": 9,
+        "title": "Chicana Latina",
         "tag": "scholarships",
         "summary": "Chican latina is where you can find out about scholarships!",
         "url": "https://chicanalatina.org/programs/scholarships/"
     },
     {
-        "resource_id": 6,
-        "title": "oaklandpromise",
+        "resource_id": 10,
+        "title": "Oakland Promise",
         "tag": "scholarships",
-        "summary": "Oaklandpromise is where you can find out about scholarships!",
+        "summary": "Oakland Promise is where you can find out about scholarships!",
         "url": "https://scholarships.oaklandpromise.org"
     },
     {
-        "resource_id": 7,
-        "title": "Si Games",
+        "resource_id": 11,
+        "title": "Asian Pacific Fund",
+        "tag": "scholarships",
+        "summary": "Asian Pacific Fund is where you can find out about scholarships!",
+        "url": "https://asianpacificfund.org/what-we-do/scholarships/apply-for-scholarship/"
+    },
+    {
+        "resource_id": 12,
+        "title": "Ted Rollins Eco Scholars",
+        "tag": "scholarships",
+        "summary": "Ted Rollins Eco Scholars is where you can find out about scholarships!",
+        "url": "https://www.tedrollinsecoscholars.com/ted-rollins-eco-scholarship-application-details/"
+    },
+    {
+        "resource_id": 13,
+        "title": "SI Games UCLA",
         "tag": "summerPrograms",
-        "summary": "Si Games is where you can find out about summer programs!",
+        "summary": "SI Games UCLA is where you can find out about summer programs!",
         "url": "http://si.games.ucla.edu/?utm_source=teenlife"
     },
     {
-        "resource_id": 8,
-        "title": "Barnard",
+        "resource_id": 14,
+        "title": "Barnard Pre-College Programs",
         "tag": "summerPrograms",
-        "summary": "Barnard is where you can find out about summer programs!",
+        "summary": "Barnard Pre-College Programs is where you can find out about summer programs!",
         "url": "https://barnard.edu/summer-pre-college-programs"
     },
     {
-        "resource_id": 9,
+        "resource_id": 15,
+        "title": "CDC Disease Detectives",
+        "tag": "summerPrograms",
+        "summary": "CDC Disease Detectives is where you can find out about summer programs!",
+        "url": "https://www.cdc.gov/museum/camp/detective/index.htm"
+    },
+    {
+        "resource_id": 16,
+        "title": "Sally Ride Junior Academy",
+        "tag": "summerPrograms",
+        "summary": "Sally Ride Junior Academy is where you can find out about summer programs!",
+        "url": "https://sallyridescience.ucsd.edu/junior-academy/?utm_medium=referral&utm_source=ad-placement&utm_campaign=eco-"
+    },
+    {
+        "resource_id": 17,
         "title": "Teen Life",
         "tag": "testPrep",
         "summary": "Teen Life is where you can find out about teen life!",
         "url": "https://www.teenlife.com/summer-program/uc-san-diego-sally-ride-science-program/"
     }, 
     {
-        "resource_id": 10,
+        "resource_id": 18,
+        "title": "MH Practice Plus",
+        "tag": "testPrep",
+        "summary": "MH Practice Plus is where you can find out about teen life!",
+        "url": "https://www.mhpracticeplus.com/psat.php"
+    },
+    {
+        "resource_id": 19,
         "title": "Power Score",
         "tag": "testPrep",
         "summary": "Power Score is where you can find out about teen life!",
         "url": "https://www.powerscore.com/sat/help/"
+    },
+    {
+        "resource_id": 20,
+        "title": "Test Preview",
+        "tag": "testPrep",
+        "summary": "Test Preview is where you can find out about teen life!",
+        "url": "https://www.testprepreview.com/sat_practice.htm"
     }
 ]

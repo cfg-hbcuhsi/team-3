@@ -19,7 +19,7 @@ class Biographies extends Component {
       return;
     }
     const url = "http://localhost:4000/api/videos";
-    const res = await axios(url, { params: { filter: "" } });
+    const res = await axios(url, { params: { filter: "Software Engineer" } });
     console.log(res.data);
     this.setState({ videos: res.data });
   }
