@@ -1,18 +1,25 @@
 import React, { Component } from "react";
-import { Nav, Navbar, Form, Button, FormControl } from "react-bootstrap";
+import { Form, Button, FormControl } from "react-bootstrap";
 import Video from "./videoCard";
 import "../App.css";
 class Biographies extends Component {
+  async componentDidMount() {
+    const response = await fetch("http://localhost:4000/api/videos", {
+      mode: "no-cors",
+    });
+  fetchVideos() {
+    
+  }
   render() {
     return (
       <div>
-        <div>Search Biographies</div>
         <div className="search">
           <Form inline>
             <FormControl
               size="lg"
               type="text"
-              placeholder="Search"
+              value={this.state.value}
+              placeholder="Search Biographies"
               htmlSize="50"
               className="mr-sm-2"
             />
