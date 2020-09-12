@@ -7,8 +7,8 @@ import {
 } from 'react-bootstrap';
 
 class Resources extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       resources: [],
       all: [],
@@ -100,27 +100,29 @@ class Resources extends Component {
   render() {
     return ( 
       <div class="page">
-      <div class="buttons">
-        <Button className="btn" onClick={() => this.filterResource('volunteering')}>Volunteering</Button>
-        <Button className="btn" onClick={() => this.filterResource('scholarships')}>Scholarships</Button>
-        <Button className="btn" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</Button>
-        <Button className="btn" onClick={() => this.filterResource('flyIns')}>Fly-ins</Button>
-        <Button className="btn" onClick={() => this.filterResource('testPrep')}>Test Prep</Button>
-        <Button className="btn" onClick={() => this.filterResource('all')}>All</Button>
-        <DropdownButton id="dropdown-basic-button" title="Translate" className="btn">
-        <Dropdown.Item onSelect={() => this.translate('en')}>English</Dropdown.Item>
-        <Dropdown.Item onSelect={() => this.translate('es')}>Spanish</Dropdown.Item>
-        <Dropdown.Item onSelect={() => this.translate('zh')}>Chinese</Dropdown.Item>
-        <Dropdown.Item onSelect={() => this.translate('hi')}>Hindi</Dropdown.Item>
-        </DropdownButton>
-      </div>
+        <Container>
+          <div class="buttons">
+            <Button className="btn" onClick={() => this.filterResource('volunteering')}>Volunteering</Button>
+            <Button className="btn" onClick={() => this.filterResource('scholarships')}>Scholarships</Button>
+            <Button className="btn" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</Button>
+            <Button className="btn" onClick={() => this.filterResource('flyIns')}>Fly-ins</Button>
+            <Button className="btn" onClick={() => this.filterResource('testPrep')}>Test Prep</Button>
+            <Button className="btn" onClick={() => this.filterResource('all')}>All</Button>
+            <DropdownButton id="dropdown-basic-button" title="Translate" className="btn">
+            <Dropdown.Item onSelect={() => this.translate('en')}>English</Dropdown.Item>
+            <Dropdown.Item onSelect={() => this.translate('es')}>Spanish</Dropdown.Item>
+            <Dropdown.Item onSelect={() => this.translate('zh')}>Chinese</Dropdown.Item>
+            <Dropdown.Item onSelect={() => this.translate('hi')}>Hindi</Dropdown.Item>
+            </DropdownButton>
+          </div>
+        </Container>
       <div>
-        <p>
+        <Container style={{ width: window.innerWidth / 4 }}>
           <h1> Most Recently Added Oppurtunities</h1>
-          {this.state.resources.map(resource => {
-            return <Resource id={resource.resource_id} params= {resource}/>  
-          })}
-        </p>
+            {this.state.resources.map(resource => {
+              return <Resource id={resource.resource_id} params= {resource}/>  
+            })}
+        </Container>
       </div>
       </div>
     );
