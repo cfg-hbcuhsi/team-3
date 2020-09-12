@@ -4,19 +4,20 @@ import Resource from "./Resource";
 class Resources extends Component {
   constructor() {
     super();
-    this.state = [{
-      "resource_id": 123,
-      "title": "Resource-1",
-      "summary": "This is the summary of a dummmy resource",
-      "url": "https://www.dummy_resource.com"},
-      {
-        "resource_id": 1234,
-        "title": "Resource-2",
-        "summary": "This is the summary of a dummmy resource",
-        "url": "https://www.dummy_resource.com"
-      }
-    ]
+    this.state = {
+      resources: []
+    }
   }
+
+  componentDidMount() {
+    fetch('/api/resources').then(res => res.json()).then(res => {
+      this.setState({resources: res});
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+
   render() {
     return (
       <div>
@@ -34,7 +35,7 @@ class Resources extends Component {
       <div>
         <p>
           <h1> Most Recently Added Oppurtunities</h1>
-          {this.state.map(resource => {
+          {this.state.resources.map(resource => {
             return <Resource id={resource.resource_id} params= {resource}/>  
           })}
         </p>

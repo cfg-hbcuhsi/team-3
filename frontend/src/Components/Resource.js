@@ -4,7 +4,6 @@ import "./Resource.css";
 function Resource(parameter) {
     const {params} = parameter;
     const {title,summary,url} = params;
-    console.log(params);
     
     return(
     <div>
