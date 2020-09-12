@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Resource from "./Resource";
+import { 
+  Col, Button, Form, Container, 
+  CardGroup, Card, CardDeck
+} from 'react-bootstrap';
 
 class Resources extends Component {
   constructor() {
@@ -16,7 +20,7 @@ class Resources extends Component {
       this.setState({resources: res});
       this.setState({all: res});
     }).catch(err => {
-      console.log(err);
+      console.log(err); 
     })
   }
 
@@ -34,15 +38,15 @@ class Resources extends Component {
 
 
   render() {
-    return (
+    return ( 
       <div class="page">
       <div class="buttons">
-        <button className="volunteering" onClick={() => this.filterResource('volunteering')}>Volunteering</button>
-        <button className="scholarships" onClick={() => this.filterResource('scholarships')}>Scholarships</button>
-        <button className="summer-programs" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</button>
-        <button className="major-info" onClick={() => this.filterResource('flyIns')}>Fly-ins</button>
-        <button className="test-prep" onClick={() => this.filterResource('testPrep')}>Test Prep</button>
-        <button className="all" onClick={() => this.filterResource('all')}>All</button>
+        <Button className="btn" onClick={() => this.filterResource('volunteering')}>Volunteering</Button>
+        <Button className="btn" onClick={() => this.filterResource('scholarships')}>Scholarships</Button>
+        <Button className="btn" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</Button>
+        <Button className="btn" onClick={() => this.filterResource('flyIns')}>Fly-ins</Button>
+        <Button className="btn" onClick={() => this.filterResource('testPrep')}>Test Prep</Button>
+        <Button className="btn" onClick={() => this.filterResource('all')}>All</Button>
       </div>
       <div>
         <p>
