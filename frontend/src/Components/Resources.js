@@ -5,37 +5,49 @@ import Resource from "./Resource";
 class Resources extends Component {
   constructor() {
     super();
-    this.state = [{
-      "resource_id": 123,
-      "title": "Resource-1",
-      "summary": "This is the summary of a dummmy resource",
-      "url": "https://www.dummy_resource.com"},
-      {
-        "resource_id": 1234,
-        "title": "Resource-2",
-        "summary": "This is the summary of a dummmy resource",
-        "url": "https://www.dummy_resource.com"
-      }
-    ]
+    this.state = {
+      resources: [],
+      all: []
+    }
   }
+
+  componentDidMount() {
+    fetch('/api/resources').then(res => res.json()).then(res => {
+      this.setState({resources: res});
+      this.setState({all: res});
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  filterResource(e){
+    const copy = [...this.state.all]
+    if (e === 'all') {
+      this.setState({resources: copy})
+    }
+    else {
+      const filtered = copy.filter(resource => resource.tag == e);
+      this.setState({resources: filtered});
+    }
+  }
+
+
+
   render() {
     return (
       <div class="page">
       <div class="buttons">
-        <button className="volunteering">Volunteering</button>
-        <button className="scholarships">Scholarships</button>
-        <button className="summer-programs">Summer Programs</button>
-        <button className="fly-in">Fly In</button>
-        <button className="test-prep">Test Prep</button>
-      </div>
-      <div class="Search">
-        <input type="text" placeholder="Search..">
-        </input>
+        <button className="volunteering" onClick={() => this.filterResource('volunteering')}>Volunteering</button>
+        <button className="scholarships" onClick={() => this.filterResource('scholarships')}>Scholarships</button>
+        <button className="summer-programs" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</button>
+        <button className="major-info" onClick={() => this.filterResource('flyIns')}>Fly-ins</button>
+        <button className="test-prep" onClick={() => this.filterResource('testPrep')}>Test Prep</button>
+        <button className="all" onClick={() => this.filterResource('all')}>All</button>
       </div>
       <div>
         <p>
           <h1> Most Recently Added Oppurtunities</h1>
-          {this.state.map(resource => {
+          {this.state.resources.map(resource => {
             return <Resource id={resource.resource_id} params= {resource}/>  
           })}
         </p>
