@@ -16,7 +16,10 @@ class Video extends Component {
   };
   handleQuestion = () => {
     axios
-      .post("http://localhost:4000/api/videos", { id: 1, question: "1232131" })
+      .post("http://localhost:4000/api/videos/question", {
+        id: 1,
+        question: "1232131",
+      })
       .then((res) => this.handleClose())
       .catch(
         (err) =>

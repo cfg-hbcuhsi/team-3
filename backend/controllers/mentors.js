@@ -52,6 +52,7 @@ router.post('/', (req, res) => {
 	{'id': 4, 'url': 'https://randomuser.me/api/portraits/women/48.jpg', 'name': 'Susan Doe', 'profession': 'Project Manager'	, 'company': 'Google'				, 'academic_info' : 'UC Berkley'				, 'degree' : 'Business Admin'			, 'interests': ['VR', 'Basketball']},
 	{'id': 5, 'url': 'https://randomuser.me/api/portraits/men/92.jpg', 'name': 'Sam Johnson', 'profession': 'Project Manager'	, 'company': 'Visa'					, 'academic_info' : 'UConn'						, 'degree' : 'Mechanical Engineering'	, 'interests': ['3D Printing', 'Rockets']},
 	{'id': 6, 'url': 'https://randomuser.me/api/portraits/women/62.jpg', 'name': 'Vivi Sharpe', 'profession': 'Software Engineer'	, 'company': 'Golden State Warriors', 'academic_info' : 'AUT'						, 'degree' : 'Mathematics'				, 'interests': ['Sports Analytics', 'Game Theory']}
+
 	];
 	
 	var start_index = req.body.pageOffset * req.body.pageSize;

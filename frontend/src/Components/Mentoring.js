@@ -121,7 +121,7 @@ class Mentoring extends Component {
         <Container className="mt-5">
         <CardDeck>
           {this.state.data.map((person) =>
-            <Card style={{ minWidth: '25%' }} className="mb-3">
+            <Card style={{ minWidth: '25%', textAlign: 'center' }} className="mb-3">
               <Card.Img variant="top" src={person.url} />
               <Card.Body>
                 <Card.Title>{person.name}</Card.Title>
