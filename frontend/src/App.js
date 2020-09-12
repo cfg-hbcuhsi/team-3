@@ -6,6 +6,7 @@ import Biographies from "./Components/Biographies";
 import Mentoring from "./Components/Mentoring";
 import Resources from "./Components/Resources";
 import Home from "./Components/Home";
+import './App.css';
 
 class App extends Component {
   render() {
