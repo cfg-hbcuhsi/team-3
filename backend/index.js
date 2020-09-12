@@ -1,7 +1,9 @@
-const express = require("express")
-const app = express()
-const port = 4000
+const express = require("express");
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = 4000;
 
-app.listen(port, () => {
-	console.log("Listen to port ",port)
-})
+app.use(bodyParser.json());
+app.use('/api', require('./controllers'));
+
+app.listen(PORT, () => { console.log(`Running on port: ${PORT}`) });
