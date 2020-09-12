@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
 import Resource from "./Resource";
 import { 
-  Col, Button, Form, Container, 
-  CardGroup, Card, CardDeck, DropdownButton, Dropdown
+  Button, Container, 
+  DropdownButton, Dropdown
 } from 'react-bootstrap';
 
 class Resources extends Component {

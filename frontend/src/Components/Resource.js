@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Resource.css";
 import { 
-    Col, Button, Form, Container, 
-    CardGroup, Card, CardDeck
+    Card
   } from 'react-bootstrap';
 
 function Resource(parameter) {

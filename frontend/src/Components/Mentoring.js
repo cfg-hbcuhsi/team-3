@@ -1,16 +1,13 @@
 import React, { Component, useState } from "react";
 import { 
   Col, Button, Form, Container, 
-  CardGroup, Card, CardDeck, Modal, Alert
+  Card, CardDeck, Modal
 } from 'react-bootstrap';
 import axios from 'axios';
 
 class Mentoring extends Component {
 
   async componentDidMount() {
-		
-		var self = this;
-		//this.state.data = [];
 		const url = "http://localhost:4000/api/mentor";
 		const res = await axios({method: 'post', url: url, data: {"pageOffset": 0, "pageSize": 3, "careers": [], "interests": []} });
 		console.log(res.data);

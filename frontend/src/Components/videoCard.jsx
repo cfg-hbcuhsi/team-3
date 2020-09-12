@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import {
-  Form,
   Button,
-  FormControl,
   Card,
-  ResponsiveEmbed,
   Modal,
 } from "react-bootstrap";
 import "../App.css";
