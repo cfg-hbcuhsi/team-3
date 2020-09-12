@@ -23,10 +23,10 @@ class App extends Component {
           </Navbar>
           <Switch>
             <Route path="/mentoring">
-              <Biographies />
+              <Mentoring />
             </Route>
             <Route path="/biographies">
-              <Mentoring />
+              <Biographies />
             </Route>
             <Route path="/resources">
               <Resources />
