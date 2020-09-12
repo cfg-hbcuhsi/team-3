@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { 
   Col, Button, Form, Container, 
-  CardGroup, Card, CardDeck, Modal
+  CardGroup, Card, CardDeck, Modal, Alert
 } from 'react-bootstrap';
 import Axios from 'axios';
 
@@ -29,26 +29,22 @@ class Mentoring extends Component {
   }
 
   componentDidMount() {
-    // var items = ['Engineer', 'Financial Analyst', 'Teacher', 'Educator', 'News Anchor', 'Data Scientist']
-    // const occupations = items.map((item) => 
-    //   { "label": item, "value: item}
-    // )
-
-    // var x = Axios.get("localhost:4000/api/mentor")
-    //           .then((data) => console.log(data))
-    //           .catch((err) => console.log(err));
-    // console.log(x);
+    
   }
 
   handleSearch() {
-
+    console.log(document.getElementById('occupations-list'));
   }
 
   messageClick(mentor_id) {
 
-    function handleQuestion(mentor_id) {
-      console.log(mentor_id);
-    };
+    const handleQuestion = () => {
+
+      Axios.post("localhost:4000/api/mentor", { "id": mentor_id, "question": "1232131" })
+            .then(res => handleClose())
+            .catch(err => document.getElementById('alert-status').innerText = "Failed to Upload");
+
+    }
 
     const [show, setShow] = useState(false);
 
@@ -73,10 +69,11 @@ class Mentoring extends Component {
             <textarea style={{ width: '100%' }} id="question-text"></textarea>
           </Modal.Body>
           <Modal.Footer>
+            <div id="alert-status"></div>
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleQuestion(mentor_id)}>Send Message</Button>
+            <Button variant="primary" onClick={handleQuestion}>Send Message</Button>
           </Modal.Footer>
         </Modal>
       </div>
@@ -92,7 +89,7 @@ class Mentoring extends Component {
               <Col>
                 <Form.Label>Interests</Form.Label>
                 {this.state.interests.map((interest) =>
-                <div>
+                <div id="interests-list">
                   <Form.Check type="checkbox" 
                     label={interest} id={interest}
                     ></Form.Check>
@@ -103,7 +100,7 @@ class Mentoring extends Component {
               <Col>
                 <Form.Label>Occupations</Form.Label>
                 {this.state.occupations.map((occupation) =>
-                <div>
+                <div id="occupations-list">
                   <Form.Check 
                     type="checkbox"
                     label={occupation}
@@ -113,7 +110,7 @@ class Mentoring extends Component {
                 )}
               </Col>
             </Form.Row>
-            <Button type="submit">Submit</Button>
+            <Button onClick={this.handleSearch}>Submit</Button>
           </Form>
         </Container>
 
