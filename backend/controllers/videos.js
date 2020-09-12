@@ -17,13 +17,11 @@ return filteredData;
 }
 //route: PORT/api/testing/test
 router.get('/', async (req, res) => {
-	console.log(req.query)
-        console.log(req.params)
 		const {offset, page_size, filter} = req.query;
 		console.log("Offset ", offset);
 		console.log("page_size ", page_size);
 		console.log("filter ", filter);
-        const videos = filterVideos(videoData, filter)
+    const videos = filterVideos(videoData, filter)
 		res.json(videos);
 })
 
@@ -33,11 +31,10 @@ if the language is different than English, then translated to English
 Check if the question is not a spam/ troll question,
 Then send question to the video creator
 */
-router.post('/:id/question', async (req, res) => {
-	  const {question} = req.query;
-		const {id} = req.params;
-		console.log("Question ", question);
+router.post('/question', async (req, res) => {
+	  const {question, id} = req.body;
 		console.log("Video id ", id);
+		console.log("Question ", question);
 		res.json({
 			status: "ok",
 			message: "asked question",
