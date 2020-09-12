@@ -64,9 +64,15 @@ router.post('/', (req, res) => {
 	} 
 	
 	if(req.body.interests.length != 0) {
-
-		filtered_data = filtered_data.filter(x => req.body.interests.includes(x['interests']) );
+		filtered_data = filtered_data.filter(x => 
+			x['interests'].filter(interest => 
+			req.body.interests.includes(interest))
+			.length != 0
+		);
 	} 
+	
+	console.log(req.body.interests);
+	console.log(data.filter(x => req.body.interests.includes(x['interests']) ));
 	
 	
 	
