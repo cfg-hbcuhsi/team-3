@@ -3,44 +3,45 @@ import {
   Col, Button, Form, Container, 
   CardGroup, Card, CardDeck, Modal, Alert
 } from 'react-bootstrap';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Mentoring extends Component {
+
+  async componentDidMount() {
+		
+		var self = this;
+		//this.state.data = [];
+		const url = "http://localhost:4000/api/mentor";
+		const res = await axios({method: 'post', url: url, data: {"pageOffset": 0, "pageSize": 3, "careers": [], "interests": []} });
+		console.log(res.data);
+		this.setState({data: res.data});
+	}
 
   constructor(props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
     this.state = {
-      occupations: ['Engineer', 'Financial Analyst', 'Teacher', 'Educator', 'News Anchor', 'Data Scientist'],
-      interests: ['Football', 'Music', 'BasketBall', 'Tennis'],
+      occupations: ['Software Engineer', 'Project Manager', 'Quant', 'Carpenter', 'News Anchor', 'Data Scientist'],
+      interests: ['Cooking', 'Rockets', 'Basketball', 'Tennis', 'VR'],
       data: []
     }
-
-    this.data = 	
-    [{'id': 1, 'url': 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg', 'name': 'Mentor 1', 'profession': 'Carpenter'			, 'company': 'Home Depot'			, 'academic_info' : 'Tampa Technical School'	, 'degree' : 'Carpentry'				, 'interests': ['cooking', 'finance']},
-    {'id': 2, 'url': 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg', 'name': 'Mentor 2', 'profession': 'Software Engineer'	, 'company': 'JP Morgan & Chase'	, 'academic_info' : 'MIT'						, 'degree' : 'Electrical Engineering'	, 'interests': ['mathematics', 'anthropology']},
-    {'id': 3, 'url': 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg', 'name': 'Mentor 3', 'profession': 'Quant'				, 'company': 'Renisance'			, 'academic_info' : 'Harvard'					, 'degree' : 'Mathematics'				, 'interests': ['history', 'game theory']},
-    
-    {'id': 4, 'url': 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg', 'name': 'Mentor 4', 'profession': 'Project Manager'	, 'company': 'Google'				, 'academic_info' : 'UC Berkley'				, 'degree' : 'Business Admin'			, 'interests': ['vr']},
-    {'id': 5, 'url': 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg', 'name': 'Mentor 5', 'profession': 'Project Manager'	, 'company': 'Visa'					, 'academic_info' : 'UConn'						, 'degree' : 'Mechanical Engineering'	, 'interests': ['3d printing', 'rockets']},
-    {'id': 6, 'url': 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg', 'name': 'Mentor 6', 'profession': 'Software Engineer'	, 'company': 'Golden State Warriors', 'academic_info' : 'AUT'						, 'degree' : 'Mathematics'				, 'interests': ['sports analytics', 'game theory']}];
-    
-
   }
 
-  componentDidMount() {
+  async handleSearch() {
+    var chosen_interests = this.state.interests.filter(interest => this.refs[interest].checked)
+    var chosen_occupations = this.state.occupations.filter(occupation => this.refs[occupation].checked)
     
-  }
-
-  handleSearch() {
-    console.log(document.getElementById('occupations-list'));
+		const url = "http://localhost:4000/api/mentor";
+		const res = await axios({method: 'post', url: url, data: {"pageOffset": 0, "pageSize": 5, "careers": chosen_occupations, "interests": chosen_interests }});
+		console.log(res.data);
+		this.setState({data: res.data});
   }
 
   messageClick(mentor_id) {
 
     const handleQuestion = () => {
 
-      Axios.post("http://localhost:4000/api/mentor", { "id": mentor_id, "question": "1232131" })
+      axios.post("http://localhost:4000/api/mentor", { "id": mentor_id, "question": document.getElementById('question-text').innerText })
             .then(res => handleClose())
             .catch(err => document.getElementById('alert-status').innerText = "Failed to Upload");
 
@@ -91,7 +92,9 @@ class Mentoring extends Component {
                 {this.state.interests.map((interest) =>
                 <div id="interests-list">
                   <Form.Check type="checkbox" 
-                    label={interest} id={interest}
+                    label={interest} 
+                    id={interest}
+                    ref={interest}
                     ></Form.Check>
                 </div>
               )}            
@@ -105,18 +108,19 @@ class Mentoring extends Component {
                     type="checkbox"
                     label={occupation}
                     id={occupation}
+                    ref={occupation}
                     />
                 </div>
                 )}
               </Col>
             </Form.Row>
-            <Button onClick={this.handleSearch}>Submit</Button>
+            <Button onClick={this.handleSearch}>Search</Button>
           </Form>
         </Container>
 
         <Container className="mt-5">
         <CardDeck>
-          {this.data.map((person) =>
+          {this.state.data.map((person) =>
             <Card style={{ minWidth: '25%' }} className="mb-3">
               <Card.Img variant="top" src={person.url} />
               <Card.Body>
@@ -134,7 +138,6 @@ class Mentoring extends Component {
               <Card.Footer>
                   <this.messageClick mentor_id={person.id} />
               </Card.Footer>
-
             </Card>
           )}
         </CardDeck>
