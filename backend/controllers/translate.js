@@ -3,7 +3,7 @@ const router = express.Router();
 const AWS = require('aws-sdk');
 const translate = new AWS.Translate();
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const {sourceLanguage, targetLanguage, text} = req.body;
     const params = {
         SourceLanguageCode: sourceLanguage,
