@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import { Nav, Navbar, Form, Button, FormControl } from "react-bootstrap";
 import Video from "./videoCard";
 import "../App.css";
+import axios from "axios";
+
 class Biographies extends Component {
+	async componentDidMount() {
+		const url = "http://localhost:4000/api/videos";
+		const res = await axios(url);
+		console.log(res.data);
+		console.log("Hello");
+	}
   render() {
     return (
       <div>
