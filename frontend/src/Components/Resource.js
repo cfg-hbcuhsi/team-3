@@ -11,7 +11,7 @@ function Resource(parameter) {
     
     return(
     
-    <Card style={{ maxWidth: '55%', marginLeft: '325px'}} className="mb-3">
+    <Card style={{ minWidth: '30%'}} className="mb-3">
     <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
