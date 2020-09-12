@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Resource from "./Resource";
+
 class Resources extends Component {
   constructor() {
     super();
@@ -34,8 +35,8 @@ class Resources extends Component {
 
   render() {
     return (
-      <div>
-      <div>
+      <div class="page">
+      <div class="buttons">
         <button className="volunteering" onClick={() => this.filterResource('volunteering')}>Volunteering</button>
         <button className="scholarships" onClick={() => this.filterResource('scholarships')}>Scholarships</button>
         <button className="summer-programs" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</button>
