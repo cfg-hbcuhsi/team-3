@@ -95,16 +95,16 @@ class Resources extends Component {
 
   render() {
     return ( 
-      <div class="page">
-        <Container>
-          <div class="buttons">
-            <Button className="btn" onClick={() => this.filterResource('volunteering')}>Volunteering</Button>
-            <Button className="btn" onClick={() => this.filterResource('scholarships')}>Scholarships</Button>
-            <Button className="btn" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</Button>
-            <Button className="btn" onClick={() => this.filterResource('flyIns')}>Fly-ins</Button>
-            <Button className="btn" onClick={() => this.filterResource('testPrep')}>Test Prep</Button>
-            <Button className="btn" onClick={() => this.filterResource('all')}>All</Button>
-            <DropdownButton id="dropdown-basic-button" title="Translate" className="btn">
+      <div class="">
+        <Container style={{ textAlign: 'center', maxWidth: '750px'}}>
+          <div class="">
+            <Button className="mb-1 mt-1" onClick={() => this.filterResource('volunteering')}>Volunteering</Button>
+            <Button className="mb-1 mt-1" onClick={() => this.filterResource('scholarships')}>Scholarships</Button>
+            <Button className="mb-1 mt-1" onClick={() => this.filterResource('summerPrograms')}>Summer Programs</Button>
+            <Button className="mb-1 mt-1" onClick={() => this.filterResource('flyIns')}>Fly-ins</Button>
+            <Button className="mb-1 mt-1" onClick={() => this.filterResource('testPrep')}>Test Prep</Button>
+            <Button className="mb-1 mt-1" onClick={() => this.filterResource('all')}>All</Button>
+            <DropdownButton id="dropdown-basic-button" title="Translate" className="mb-1 mt-1">
             <Dropdown.Item onSelect={() => this.translate('en')}>English</Dropdown.Item>
             <Dropdown.Item onSelect={() => this.translate('es')}>Spanish</Dropdown.Item>
             <Dropdown.Item onSelect={() => this.translate('zh')}>Chinese</Dropdown.Item>
@@ -113,7 +113,7 @@ class Resources extends Component {
           </div>
         </Container>
       <div>
-        <Container style={{ width: window.innerWidth / 4 }}>
+        <Container style={{ textAlign: 'center', maxWidth: '750px'}}>
           <h1> Most Recently Added Oppurtunities</h1>
             {this.state.resources.map(resource => {
               return <Resource id={resource.resource_id} params= {resource}/>  
