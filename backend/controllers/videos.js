@@ -2,15 +2,29 @@ const express = require('express');
 const router = express.Router();
 const videoData = require('../data/videos');
 
+function filterVideos(data, filter){
+    if (filter === "") return data;
+    if (filter === "doctor") return [data[1]]
+    else return [data[0]]
+    const regexFilter = new RegExp(filter, 'i');
+    const filteredData = data.filter(video => {
+	const {title, profession, mentor_name, description} = video;
+	return (title.search(regexFilter) >= 0) ||(profession.search(regexFilter)) || (mentor_name.search(regexFilter) >= 0) || (description.search(regexFilter) >=0) 
+    })
+    console.log('Filtered Data: ',filteredData)
+    console.log('Filter: ',filter)
+return filteredData;                             
+}
 //route: PORT/api/testing/test
 router.get('/', async (req, res) => {
 	console.log(req.query)
+        console.log(req.params)
 		const {offset, page_size, filter} = req.query;
 		console.log("Offset ", offset);
 		console.log("page_size ", page_size);
 		console.log("filter ", filter);
-
-		res.json(videoData);
+        const videos = filterVideos(videoData, filter)
+		res.json(videos);
 })
 
 /*ask question route
