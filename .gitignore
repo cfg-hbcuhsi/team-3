@@ -1,2 +1,4 @@
 *.pem
 *.ppk
+backend/package-lock.json
+frontend/node_modules
